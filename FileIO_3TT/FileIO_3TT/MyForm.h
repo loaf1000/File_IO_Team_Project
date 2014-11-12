@@ -132,6 +132,7 @@ namespace FileIO_3TT {
 	private: System::Windows::Forms::PictureBox^  pictureBoxAlignment;
 
 	private: System::Windows::Forms::Label^  labelDescription;
+	private: System::Windows::Forms::ToolStripMenuItem^  readByIndexToolStripMenuItem;
 
 
 	private:
@@ -164,6 +165,7 @@ namespace FileIO_3TT {
 			this->deleteNameToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->pictureBoxAlignment = (gcnew System::Windows::Forms::PictureBox());
 			this->labelDescription = (gcnew System::Windows::Forms::Label());
+			this->readByIndexToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxAlignment))->BeginInit();
 			this->SuspendLayout();
@@ -257,22 +259,22 @@ namespace FileIO_3TT {
 			// newToolStripMenuItem
 			// 
 			this->newToolStripMenuItem->Name = L"newToolStripMenuItem";
-			this->newToolStripMenuItem->Size = System::Drawing::Size(103, 22);
+			this->newToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->newToolStripMenuItem->Text = L"New";
 			this->newToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::newToolStripMenuItem_Click);
 			// 
 			// openToolStripMenuItem
 			// 
 			this->openToolStripMenuItem->Name = L"openToolStripMenuItem";
-			this->openToolStripMenuItem->Size = System::Drawing::Size(103, 22);
+			this->openToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->openToolStripMenuItem->Text = L"Open";
 			this->openToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::openToolStripMenuItem_Click);
 			// 
 			// specialToolStripMenuItem
 			// 
-			this->specialToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+			this->specialToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->seToolStripMenuItem,
-					this->deleteNameToolStripMenuItem
+					this->deleteNameToolStripMenuItem, this->readByIndexToolStripMenuItem
 			});
 			this->specialToolStripMenuItem->Name = L"specialToolStripMenuItem";
 			this->specialToolStripMenuItem->Size = System::Drawing::Size(56, 20);
@@ -313,6 +315,13 @@ namespace FileIO_3TT {
 			this->labelDescription->Size = System::Drawing::Size(280, 62);
 			this->labelDescription->TabIndex = 15;
 			this->labelDescription->Text = L"No Textfile created or opened.";
+			// 
+			// readByIndexToolStripMenuItem
+			// 
+			this->readByIndexToolStripMenuItem->Name = L"readByIndexToolStripMenuItem";
+			this->readByIndexToolStripMenuItem->Size = System::Drawing::Size(162, 22);
+			this->readByIndexToolStripMenuItem->Text = L"Read by Index";
+			this->readByIndexToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::readByIndexToolStripMenuItem_Click);
 			// 
 			// MyForm
 			// 
@@ -497,6 +506,8 @@ private: System::Void ExitButton_Click(System::Object^  sender, System::EventArg
 		{
 			ReadStuff = gcnew StreamReader(filePath);
 
+			IOTextboxOutput->Clear();
+
 			labelDescription->Text = Path::GetFileName(filePath) + " has being read.";
 			//Reads every line and echoes
 			do
@@ -622,6 +633,39 @@ private: System::Void ExitButton_Click(System::Object^  sender, System::EventArg
 		}
 	}
 
+	void readFromIndex()
+	{
+		String^ readString;
+		//array<Char>^ charArray = gcnew array<Char>(5);
+		//int charactersRead;
+		try
+		{
+			ReadStuff = gcnew StreamReader(filePath);
+
+			IOTextboxOutput->Clear();
+
+			labelDescription->Text = Path::GetFileName(filePath) + " has been read.";
+			//Reads every line and echoes
+			do
+			{
+
+				
+				for (int i = 0; i < 5; i++)
+				{
+						IOTextboxOutput->Text +=  (char)ReadStuff->Read();
+				}
+				
+
+			} while (ReadStuff->Peek() >= 0);
+			
+			ReadStuff->Close();
+		}
+
+		catch (Exception^ e)
+		{
+			MessageBox::Show("Please open or create a text file", "ERROR");
+		}
+	}
 	void openTextFile()
 	{
 		///////////////////////////////////////////////////////////////////////////
@@ -708,6 +752,10 @@ private: System::Void deleteNameToolStripMenuItem_Click(System::Object^  sender,
 private: System::Void seToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) 
 {
 	SearchName();
+}
+private: System::Void readByIndexToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
+{
+	//readFromIndex();
 }
 };
 }
