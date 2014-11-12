@@ -1,0 +1,17 @@
+﻿Build started 11/12/2014 2:55:44 PM.
+     1>Project "E:\CISC 192 -- C++ F2014\C++ Programs\FileIO_3TT (1)\FileIO_3TT\FileIO_3TT.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib MyForm.cpp
+         MyForm.cpp
+     1>e:\cisc 192 -- c++ f2014\c++ programs\fileio_3tt (1)\fileio_3tt\MyForm.h(469): warning C4101: 'e' : unreferenced local variable
+     1>e:\cisc 192 -- c++ f2014\c++ programs\fileio_3tt (1)\fileio_3tt\MyForm.h(527): warning C4101: 'e' : unreferenced local variable
+     1>e:\cisc 192 -- c++ f2014\c++ programs\fileio_3tt (1)\fileio_3tt\MyForm.h(620): warning C4101: 'e' : unreferenced local variable
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\CISC 192 -- C++ F2014\C++ Programs\FileIO_3TT (1)\Debug\FileIO_3TT.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\FileIO_3TT.MyForm.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\CISC 192 -- C++ F2014\C++ Programs\FileIO_3TT (1)\Debug\FileIO_3TT.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\MyForm.obj
+         "Debug\.NETFramework,Version=v4.5.AssemblyAttributes.obj"
+         FileIO_3TT.vcxproj -> E:\CISC 192 -- C++ F2014\C++ Programs\FileIO_3TT (1)\Debug\FileIO_3TT.exe
+     1>Done Building Project "E:\CISC 192 -- C++ F2014\C++ Programs\FileIO_3TT (1)\FileIO_3TT\FileIO_3TT.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.03
