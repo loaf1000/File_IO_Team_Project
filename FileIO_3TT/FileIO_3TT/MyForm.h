@@ -11,8 +11,8 @@ Assignment Name		    :Team Tutorial
 Course # and Title		:CISC 192 - C++
 Class Meeting Time		:MW 9:35 - 12:45
 Instructor			    :Professor Forman
-Hours			        : Laithe 10, John #, Denmar #
-Difficulty			    : Laithe 4, John #, Denmar #
+Hours			        : Laithe 10, John 6, Denmar #
+Difficulty			    : Laithe 4, John 5, Denmar #
 Completion Date		    :November/16/2014
 Project Name		    :FileIO_3TT
 
@@ -476,18 +476,20 @@ void deleteName(String^ userInput)
 				WriteStuff->WriteLine(textFile[i]);
 			}
 			MessageBox::Show(userInput + " has been deleted from the file.");
+
+			WriteStuff->Close();
 		}
 		else
 		{
 			MessageBox::Show(userInput + " was not found in the text file.");
 		}
 
-		WriteStuff->Close();
+		
 	}
 
 	catch (Exception^ e) //Here we "catch" the error code(Execption^ e) and display it.
 	{
-		MessageBox::Show("No file Selected", "ERROR");
+		MessageBox::Show("Error: " + e, "ERROR");
 	}
 }
 
@@ -596,9 +598,17 @@ void readFile()
 //Laithe Marshall
 void readNumberOfChars()
 {
+	///////////////////////////////////////////////////////////////////////////
+
+	//			LOCAL OBJECT/VARIABLE DECLARATIONS
+
+	///////////////////////////////////////////////////////////////////////////
+
 	String^ readString;
 	// creates a new Char array and sets it length to 5 change
 	array<Char>^ charArray = gcnew array<Char>(5);
+
+	///////////////////////////////////////////////////////////////////////////
 
 	try //We are going to "try" the following code. If we get an error we go to the "catch".
 	{
@@ -659,14 +669,13 @@ void searchName()
 
 			MessageBox::Show(searchName + " : " + fileUserName);
 
-			if ((fileUserName = ReadStuff->ReadLine()) == fileUserName)
+			if (fileUserName == searchName)
 			{
-				searchDone = true;
 				MessageBox::Show("Found a match: " + fileUserName);
-
+				break;
 
 			}
-			else
+			if (ReadStuff->Peek() > -1)
 			{
 				searchDone = true;
 				MessageBox::Show("Sorry, but we did not find a match.");
@@ -740,15 +749,17 @@ void writeToFile()
 					IOTextboxOutput->Text = "";
 				}
 
-				if (!writeModeActivated)
-				{
 
-					AppendFile(filePath);
+			}
 
-					writeModeActivated = true;
-					IOTextboxOutput->Text = phrase;
+			if (!writeModeActivated)
+			{
 
-				}
+				AppendFile(filePath);
+
+				writeModeActivated = true;
+				IOTextboxOutput->Text = phrase;
+
 			}
 		}
 		catch (Exception ^ e) //Here we "catch" the error code(Execption^ e) and display it, we can put other code here as well.
