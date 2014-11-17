@@ -11,8 +11,8 @@ Assignment Name		    :Team Tutorial
 Course # and Title		:CISC 192 - C++
 Class Meeting Time		:MW 9:35 - 12:45
 Instructor			    :Professor Forman
-Hours			        :#
-Difficulty			    :4
+Hours			        : Laithe 10, John #, Denmar #
+Difficulty			    : Laithe 4, John #, Denmar #
 Completion Date		    :November/16/2014
 Project Name		    :FileIO_3TT
 
@@ -824,3 +824,11 @@ private: System::Void specialToolStripMenuItem_Click(System::Object^  sender, Sy
 }
 };
 }
+
+/*///////////////////////////////////////////////////////////////////
+
+If you spend too much time thinking about a thing, you'll never get it done.
+
+							Bruce Lee
+Added by Laithe
+///////////////////////////////////////////////////////////////////*/
